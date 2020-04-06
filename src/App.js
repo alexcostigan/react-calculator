@@ -2,57 +2,57 @@ import React from "react";
 import "./App.css";
 class App extends React.Component {
   state = {
-    numLeft: [],
-    numLeftActive: true,
+    numberLeft: [],
+    numberLeftActive: true,
     operator: "",
-    numRight: [],
-    numRightActive: false,
+    numberRight: [],
+    numberRightActive: false,
     result: 0
   }
 
  setNumber = (n) => {
-  if (this.state.numLeftActive) {
-    let numUpdatedLeft = [...this.state.numLeft, n].join("");
-    let numUpdatedLeftInt = parseInt(numUpdatedLeft);
+  if (this.state.numberLeftActive) {
+    let numberUpdatedLeft = [...this.state.numLeft, n].join("");
+    let numberUpdatedLeftInt = parseInt(numberUpdatedLeft);
     this.setState({
-      numLeft: [numUpdatedLeftInt],
+      numberLeft: [numberUpdatedLeftInt],
     }); 
-  } else if (this.state.numRightActive) {
-    let numUpdatedRight = [...this.state.numRight, n ].join("");
-    let numUpdatedRightInt = parseInt(numUpdatedRight);
+  } else if (this.state.numberRightActive) {
+    let numberUpdatedRight = [...this.state.numRberight, n ].join("");
+    let numberUpdatedRightInt = parseInt(numberUpdatedRight);
     this.setState({
-      numRight: [numUpdatedRightInt],
+      numberRight: [numberUpdatedRightInt],
     });
   }
 }
 setOperator = (o) => {
   this.setState({
-    numLeftActive: false,
+    numberLeftActive: false,
     operator: o,
-    numRightActive: true,
+    numberRightActive: true,
   });
 }
 clear = () => {
   this.setState({
-    numLeft: [],
-    numLeftActive: true,
+    numberLeft: [],
+    numberLeftActive: true,
     operator: "",
-    numRight: [],
-    numRightActive: false,
+    numberRight: [],
+    numberRightActive: false,
     result: 0
   });
 }
 setResult = () => {
-  if (this.state.numLeft && this.state.numRight) {
+  if (this.state.numberLeft && this.state.numberRight) {
     let finalResult = 0;
     if (this.state.operator === "+") {
-      finalResult = + this.state.numLeft + + this.state.numRight;
+      finalResult = + this.state.numberLeft + + this.state.numberRight;
     } else if (this.state.operator === "-") {
-      finalResult = this.state.numLeft - this.state.numRight;
+      finalResult = this.state.numberLeft - this.state.numberRight;
     } else if (this.state.operator === "x") {
-      finalResult = this.state.numLeft * this.state.numRight;
+      finalResult = this.state.numberLeft * this.state.numberRight;
     } else if (this.state.operator === "/") {
-      finalResult = this.state.numLeft / this.state.numRight;
+      finalResult = this.state.numberLeft / this.state.numberRight;
     } else {
       finalResult = 0;
     }
