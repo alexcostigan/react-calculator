@@ -18,7 +18,7 @@ class App extends React.Component {
       numberLeft: [numberUpdatedLeftInt],
     }); 
   } else if (this.state.numberRightActive) {
-    let numberUpdatedRight = [...this.state.numRberight, n ].join("");
+    let numberUpdatedRight = [...this.state.numberRight, n ].join("");
     let numberUpdatedRightInt = parseInt(numberUpdatedRight);
     this.setState({
       numberRight: [numberUpdatedRightInt],
